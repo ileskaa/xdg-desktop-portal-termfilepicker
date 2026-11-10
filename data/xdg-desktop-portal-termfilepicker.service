@@ -1,0 +1,11 @@
+[Unit]
+Description=Portal service (Yazi terminal file chooser)
+PartOf=graphical-session.target
+After=graphical-session.target
+
+[Service]
+Type=dbus
+BusName=org.freedesktop.impl.portal.desktop.termfilepicker
+ExecStart=@LIBEXECDIR@/xdg-desktop-portal-termfilepicker
+Restart=on-failure
+Slice=session.slice
